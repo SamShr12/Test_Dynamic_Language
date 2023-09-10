@@ -6,7 +6,14 @@ export default function Home() {
   const t = useTranslations("Index");
 
   return (
-    <div>
+    <div
+      style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+      }}
+    >
       <div>
         <Link href="/" locale="en">
           In english
@@ -15,14 +22,26 @@ export default function Home() {
         <Link href="/" locale="fi">
           In Finnish
         </Link>
+        |{" "}
+        <Link href={`/`} locale="jp">
+          In Japanese
+        </Link>
         <br />
         <br />
       </div>
-      <div>
+      <div
+        style={{
+          textAlign: "center",
+        }}
+      >
         <p>{t("title")}</p>
         <p>{t("subtitle")}</p>
       </div>
-      <div>
+      <div
+        style={{
+          textAlign: "center",
+        }}
+      >
         <br />
         <AlertMessage message={t("alertMessage")} />
       </div>
